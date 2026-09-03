@@ -233,6 +233,42 @@
   <footer>
     © 2026 Zelvosiq — AI-Powered Sales Assistant Platform
   </footer>
+<script>
+const input = document.querySelector('.chat-input input');
+const button = document.querySelector('.chat-input button');
+const chatDemo = document.querySelector('.chat-demo');
 
+function sendMessage() {
+  const message = input.value.trim();
+
+  if (message === '') return;
+
+  // User message
+  const userMessage = document.createElement('div');
+  userMessage.className = 'user-message';
+  userMessage.textContent = message;
+
+  chatDemo.insertBefore(userMessage, document.querySelector('.chat-input'));
+
+  input.value = '';
+
+  // Simple bot reply
+  setTimeout(() => {
+    const botReply = document.createElement('div');
+    botReply.className = 'bot-message';
+    botReply.textContent = 'Thanks for your message! Our AI Salesman is here to help you find the right product.';
+    
+    chatDemo.insertBefore(botReply, document.querySelector('.chat-input'));
+  }, 500);
+}
+
+button.addEventListener('click', sendMessage);
+
+input.addEventListener('keypress', function(event) {
+  if (event.key === 'Enter') {
+    sendMessage();
+  }
+});
+</script>
 </body>
 </html>
