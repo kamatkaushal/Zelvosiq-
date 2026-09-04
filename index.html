@@ -252,26 +252,11 @@ function sendMessage() {
 
   input.value = '';
 
-  // Simple bot reply
-  setTimeout(() => {
-    const botReply = document.createElement('div');
-    botReply.className = 'bot-message';
-    botReply.textContent = 'Thanks for your message! Our AI Salesman is here to help you find the right product.';
-    
-    chatDemo.insertBefore(botReply, document.querySelector('.chat-input'));
-  }, 500);
+    input.value = '';
 }
-
-button.addEventListener('click', sendMessage);
-
-input.addEventListener('keypress', function(event) {
-  if (event.key === 'Enter') {
-    sendMessage();
-  }
-});
 </script>
-  <script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"></script>
-<script src="https://files.bpcontent.cloud/2026/09/04/11/20260904115251-BA589KRB.js" defer></script>
-  
+<script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/09/04/11/20260904115251-BA589KRB.js"></script>
 </body>
 </html>
+
